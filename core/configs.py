@@ -1,5 +1,5 @@
-from typing import List
-from pydantic import BaseSettings
+from typing import List, ClassVar
+from pydantic_settings import BaseSettings
 
 from sqlalchemy.ext.declarative import declarative_base
 from dotenv import load_dotenv
@@ -11,7 +11,7 @@ load_dotenv()
 class Settings(BaseSettings):
     API_V1_STR: str = '/api/v1'
     DB_URL: str = os.getenv("DB_URL")
-    DBBaseModel = declarative_base()
+    DBBaseModel: ClassVar = declarative_base()
     
     JWT_SECRET: str = os.getenv("JWT_SECRET")
     """
