@@ -15,7 +15,7 @@ router = APIRouter()
 # Post Artigo
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ArtigoSchema)
 async def post_artigo(artigo: ArtigoSchema, usuario_logado: UsuarioModel = Depends(get_current_user), db: AsyncSession = Depends(get_session)):
-    novo_artigo: ArtigoModel = ArtigoModel(titulo=artigo.titulo, descricao=artigo.descricao, usuario_id=usuario_logado.id)
+    novo_artigo: ArtigoModel = ArtigoModel(titulo=artigo.titulo, descricao=artigo.descricao, usuario_id=usuario_logado.id, url_fonte=str(artigo.url_fonte))
     
     db.add(novo_artigo)
     await db.commit()
@@ -25,7 +25,7 @@ async def post_artigo(artigo: ArtigoSchema, usuario_logado: UsuarioModel = Depen
 # Get Artigos
 @router.get('/', response_model=list[ArtigoSchema])
 async def get_artigos(db: AsyncSession = Depends(get_session)):
-    async with db() as session:
+    async with db as session:
         query = select(ArtigoModel)
         result = await session.execute(query)
         artigos: List[ArtigoModel] = result.scalars().unique().all()
