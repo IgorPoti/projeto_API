@@ -7,7 +7,7 @@
   <h3 align="center">API com FastAPI</h3>
 
   <p align="center">
-    API com fins de estudos com FastAPI. Nesse projeto foi gerado diversos endpoints para usuários e inserção de artigos (CRUD) com autorização OAuth 2.0.
+    API para fins de estudos com FastAPI. No projeto foi gerado diversos endpoints para usuários e inserção de artigos (CRUD) com autorização OAuth 2.0.
     <br/>
     <br/>
     <a href="https://github.com/IgorPoti/projeto_API"><strong>Um pouco sobre o projeto »</strong></a>
