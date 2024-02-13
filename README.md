@@ -4,7 +4,7 @@
     <img src="https://cdn.worldvectorlogo.com/logos/fastapi.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">API com FastAPI</h3>
+  <h3 align="center">API REST com FastAPI</h3>
 
   <p align="center">
     API para fins de estudos com FastAPI. No projeto foi gerado diversos endpoints para usuários e inserção de artigos (CRUD) com autorização OAuth 2.0.
